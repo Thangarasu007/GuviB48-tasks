@@ -1,0 +1,36 @@
+Using restcountries print all the countreis name,regions,subregions,populations:
+
+script.js file:
+
+//create an XHR object
+var request = new XMLHttpRequest();
+//Initiate request
+request.open("GET","https://restcountries.com/v2/all");
+//sending the request
+request.send();
+//onload event,functions
+request.onload=function(){
+    var result = JSON.parse(request.response);
+    var temp =[];
+    for(var i=0; i<result.length; i++){
+        temp.push(result[i].flags.png);
+    }
+    for(var i=0; i<temp.length; i++){
+        console.log(result[i].name, result[i].region, result[i].subregion, result[i].population,);
+    }   
+}
+
+index.html file:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="script.js"></script>    
+</body>
+</html>

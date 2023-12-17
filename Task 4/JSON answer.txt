@@ -1,0 +1,8 @@
+JSON.stringify()  method to be used.
+
+var obj1 = {name: "Person 1", age: 5};
+var obj2 = {age: 5, name: "Person 1"};
+
+var res1  = JSON.stringify(obj1);
+var res2  = JSON.stringify(obj2);
+console.log(res1==res2);
